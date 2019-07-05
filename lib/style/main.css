@@ -243,29 +243,21 @@ table {
     }
 }
 
-/* .first-enter,
-.first-leave-to {
-    transform: rotateX(-90deg);
-    border: 4px 4px solid #ccc;
-}
 
-.first-enter-to,
-.first-leave {
-    transform: rotateX(0);
-    border: none
-}
-
-.first-enter-active,
-.first-leave-active {
-    transition: 1s ease;
-} */
 
 .container {
     overflow: hidden;
-    /* 设置固定定位时，宽高会相对于浏览器窗口进行自动调整 */
     position: fixed;
     width: 100%;
     height: 100%;
+}
+
+@media screen{
+    .container {
+        overflow: auto !important;
+        position: fixed;
+        width: 100%;
+        height: 100%;
 }
 
 .header {
