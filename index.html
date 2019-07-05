@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div id="app" v-cloak>
+    <div id="app" v-cloak> 
 
         <transition name="loading-left">
             <div class="loading-bg-left" v-show="!init"></div>
@@ -35,11 +35,11 @@
 
         <div class="container">
             <div class="header">
-                <span @click="slide(0,0,0)" class="aside-btn" :class="pageI===0 ? pageFlag : ''" title="1/5"></span>
-                <span @click="slide(0,0,1)" class="aside-btn" :class="pageI===1 ? pageFlag : ''" title="2/5"></span>
-                <span @click="slide(0,0,2)" class="aside-btn" :class="pageI===2 ? pageFlag : ''" title="3/5"></span>
-                <span @click="slide(0,0,3)" class="aside-btn" :class="pageI===3 ? pageFlag : ''" title="4/5"></span>
-                <span @click="slide(0,0,4)" class="aside-btn" :class="pageI===4 ? pageFlag : ''" title="5/5"></span>
+                <span @click="slide(0,0,0)" class="aside-btn" :class="pageI===0 ? pageFlag : ''" title="首页"></span>
+                <span @click="slide(0,0,1)" class="aside-btn" :class="pageI===1 ? pageFlag : ''" title="关于"></span>
+                <span @click="slide(0,0,2)" class="aside-btn" :class="pageI===2 ? pageFlag : ''" title="技能"></span>
+                <span @click="slide(0,0,3)" class="aside-btn" :class="pageI===3 ? pageFlag : ''" title="作品"></span>
+                <span @click="slide(0,0,4)" class="aside-btn" :class="pageI===4 ? pageFlag : ''" title="联系"></span>
             </div>
 
             <div @click="toggleMenu" :class="isMenu ? menu2 : menu1" class="menu" @mouseover="menuTitle=true"
@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="main-1 main-bg">
-                    <div :class="open ? mask2 : mask1" class="main-mask"></div>
+                    <div :class="open ? mask2 : ''" class="main-mask"></div>
                     <div class="fog-1"></div>
                     <div class="fog-2"></div>
                     <transition name="firstPrompt">
@@ -124,7 +124,7 @@
                 </div>
 
                 <div class="main-2 main-bg">
-                    <div :class="open ? mask2 : mask1" class="main-mask"></div>
+                    <div :class="open ? mask2 : ''" class="main-mask"></div>
                     <div class="rain">
                         <span class="rain-1" :class="pageI ===1 ? raindown : ''"></span>
                     </div>
@@ -189,7 +189,7 @@
                 </div>
 
                 <div class="main-3 main-bg">
-                    <div :class="open ? mask2 : mask1" class="main-mask"></div>
+                    <div :class="open ? mask2 : ''" class="main-mask"></div>
                     <div class="sky" v-show="pageI===2">
                         <div class="clouds_one"></div>
                         <div class="clouds_two"></div>
@@ -233,7 +233,7 @@
                 </div>
 
                 <div class="main-4 main-bg">
-                    <div :class="open ? mask2 : mask1" class="main-mask"></div>
+                    <div :class="open ? mask2 : ''" class="main-mask"></div>
                     <div class="main-4-sun" v-show="pageI===3">
                         <div class="sun-1"></div>
                         <div class="sun-2"></div>
@@ -258,7 +258,7 @@
                 </div>
 
                 <div class="main-5 main-bg">
-                    <div :class="open ? mask2 : mask1" class="main-mask"></div>
+                    <div :class="open ? mask2 : ''" class="main-mask"></div>
                     <transition name="lastPrompt">
 
                         <div class="main-5-prompt" v-show="showLastPrompt">
@@ -466,7 +466,6 @@
                     raindown: "raindown",
                     active: "active",
                     open: false,
-                    mask1: "main-mask1",
                     mask2: "main-mask2",
                     point: {
                         x: "0",
@@ -475,7 +474,6 @@
                         rx: "0",
                         ry: "0"
                     },
-                    // menuOff: true,
                     menuTitle: false
 
                 },

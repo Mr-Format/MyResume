@@ -630,10 +630,6 @@ table {
     z-index: 8;
 }
 
-.main .main-mask1 {
-    background-color: rgba(250, 250, 250, 0.2);
-}
-
 .main .main-mask2 {
     z-index: 19;
     background-color: rgba(0, 0, 0, 0.7);
@@ -645,31 +641,9 @@ table {
 }
 
 .main-1 {
-    background: url(../images/1.jpg) center center;
-    background-size: cover;
+    background-color: rgb(130, 170, 159);
 }
 
-.main-1 .fog-1 {
-    width: 300vw;
-    height: 100vh;
-    position: absolute;
-    background: url(../images/fog2.png) repeat-x;
-    background-size: contain;
-    background-position: center;
-    -webkit-animation: fog 60s linear infinite;
-    animation: fog 60s linear infinite;
-}
-
-.main-1 .fog-2 {
-    width: 300vw;
-    height: 100vh;
-    position: absolute;
-    background: url(../images/fog1.png) repeat-x;
-    background-size: contain;
-    background-position: center;
-    -webkit-animation: fog 40s linear infinite;
-    animation: fog 40s linear infinite;
-}
 .main-1 .main-1-prompt{
     position: absolute;
     top: 10px;
@@ -679,7 +653,7 @@ table {
     width: 150px;
     background-color: #000;
     color: #fff;
-    /* margin: auto; */
+
     text-align: center;
     line-height: 50px;
     box-sizing: border-box;
@@ -702,34 +676,8 @@ table {
 }
 
 
-
-@-webkit-keyframes fog {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        -webkit-transform: translate3d(-200vw, 0, 0);
-        transform: translate3d(-200vw, 0, 0);
-    }
-}
-
-@keyframes fog {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        -webkit-transform: translate3d(-200vw, 0, 0);
-        transform: translate3d(-200vw, 0, 0);
-    }
-}
-
-
-
 .main-2 {
-    background: url(../images/2.jpg) center center;
-    background-size: cover;
+    background-color: rgb(81, 99, 148);
 }
 
 .main-2 .rain {
@@ -774,9 +722,8 @@ table {
 }
 
 .main-3 {
-    background: url(../images/3.jpg) center center;
-    background-size: cover;
     position: relative;
+    background-color: rgb(146, 90, 74);
 }
 
 .sky {
@@ -804,39 +751,6 @@ table {
     transform: translate3d(0, 0, 0);
 }
 
-.sky .clouds_two {
-    background: url("../images/cloud_two.png");
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 300%;
-    -webkit-animation: cloud_two 125s linear infinite;
-    -moz-animation: cloud_two 125s linear infinite;
-    -o-animation: cloud_two 125s linear infinite;
-    animation: cloud_two 125s linear infinite;
-    -webkit-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-.sky .clouds_three {
-    background: url("../images/cloud_three.png");
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 300%;
-    -webkit-animation: cloud_three 150s linear infinite;
-    -moz-animation: cloud_three 150s linear infinite;
-    -o-animation: cloud_three 150s linear infinite;
-    animation: cloud_three 150s linear infinite;
-    -webkit-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
 
 @-webkit-keyframes cloud_one {
     0% {
@@ -865,64 +779,9 @@ table {
     }
 }
 
-@-webkit-keyframes cloud_two {
-    0% {
-        left: 0
-    }
-    100% {
-        left: -200%
-    }
-}
-
-@-moz-keyframes cloud_two {
-    0% {
-        left: 0
-    }
-    100% {
-        left: -200%
-    }
-}
-
-@keyframes cloud_two {
-    0% {
-        left: 0
-    }
-    100% {
-        left: -200%
-    }
-}
-
-@-webkit-keyframes cloud_three {
-    0% {
-        left: 0
-    }
-    100% {
-        left: -200%
-    }
-}
-
-@-moz-keyframes cloud_three {
-    0% {
-        left: 0
-    }
-    100% {
-        left: -200%
-    }
-}
-
-@keyframes cloud_three {
-    0% {
-        left: 0
-    }
-    100% {
-        left: -200%
-    }
-}
-
 .main-4 {
-    background: url(../images/4.jpg) center center;
-    background-size: cover;
     position: relative;
+    background-color: rgb(116, 129, 137);
 }
 
 .main-4 .main-4-sun {
@@ -1028,49 +887,9 @@ table {
     }
 }
 
-.main-4-sun .sun-4 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-position: center;
-    -webkit-animation: sun4 30s ease infinite alternate;
-    animation: sun4 30s ease infinite alternate;
-}
-
-@keyframes sun4 {
-    0% {
-        background-color: rgba(0, 0, 0, 0);
-    }
-    50% {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-    80%{
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-    100% {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-}
-
-@-webkit-keyframes sun4 {
-    0% {
-        background-color: rgba(0, 0, 0, 0);
-    }
-    50% {
-        background-color: rgba(0, 0, 0, 0.6);
-    }
-    80%{
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-    100% {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-}
 
 .main-5 {
-    background: url(../images/5.jpg) center center;
-    background-size: cover;
+    background-color: rgb(72,75,93);
     position: relative;
 }
 
@@ -1084,7 +903,6 @@ table {
     width: 150px;
     background-color: #000;
     color: #fff;
-    /* margin: auto; */
     text-align: center;
     line-height: 50px;
     box-sizing: border-box;
@@ -1108,7 +926,6 @@ table {
 
 
 .main-header {
-    /* padding: 0 20px; */
     height: 60px;
     width: 228px;
     position: fixed;
@@ -1265,7 +1082,7 @@ table {
     padding: 2em;
     z-index: 9;
     border-radius: 10px;
-    background-color: rgba(51, 51, 51, 0.9);
+    /* background-color: rgba(51, 51, 51, 0.9); */
     transition: 1s;
 }
 
@@ -1281,13 +1098,14 @@ table {
     display: inline-block;
     font-weight: 600;
     line-height: 2;
+    /* color: #eee; */
     color: #eee;
     background: transparent;
 }
 .main-2 .main-2-content .about-item-wrapper .about-item-p1{
     font-size: 18px;
     font-weight: 600;
-    color: #eee;
+    color: #ddd;
     transition: 0.5s ;
 }
 .about-item-wrapper .timeline-item:hover .about-item-p1{
