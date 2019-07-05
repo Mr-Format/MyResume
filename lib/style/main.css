@@ -245,20 +245,17 @@ table {
 
 
 
-.container {
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-}
 
-@media screen{
     .container {
-        overflow: auto !important;
+        overflow: hidden;
         position: fixed;
         width: 100%;
         height: 100%;
-}
+    }
+
+
+
+
 
 .header {
     position: absolute;
@@ -279,7 +276,6 @@ table {
     top: 2rem;
     border-radius: 100%;
     cursor: pointer;
-    box-shadow: 0 0 4px rgba(204, 204, 204, 0.342);
     transition: 0.3s linear;
 }
 
@@ -296,7 +292,6 @@ table {
 }
 
 .menu1:hover {
-    background-color: rgba(200, 200, 200, 0.1);
     transition: 0.3s linear;
 }
 
@@ -351,36 +346,6 @@ table {
     left: 24px;
 }
 
-@media screen and (min-width:1124px) {
-    .menu1:hover .menu-bar {
-        background-color: #409EFF;
-        transition: 0.3s linear;
-    }
-    .menu1:hover::before {
-        width: 20px;
-        background-color: #409EFF;
-        transform: rotate(45deg) translate(-6px, 2px);
-        -ms-transform: rotate(45deg) translate(-6px, 2px);
-        /* IE 9 */
-        -moz-transform: rotate(45deg) translate(-6px, 2px);
-        /* Firefox */
-        -webkit-transform: rotate(-45deg) translate(-6px, 2px);
-        /* Safari 和 Chrome */
-        -o-transform: rotate(45deg) translate(-6px, 2px);
-        /* Opera */
-        transition: 0.3s linear;
-    }
-    .menu1:hover::after {
-        width: 20px;
-        background-color: #409EFF;
-        transform: rotate(-45deg) translate(-6px, -2px);
-        -ms-transform: rotate(-45deg) translate(-6px, -2px);
-        -moz-transform: rotate(-45deg) translate(-6px, -2px);
-        -webkit-transform: rotate(45deg) translate(-6px, -2px);
-        -o-transform: rotate(-45deg) translate(-6px, -2px);
-        transition: 0.3s linear;
-    }
-}
 
 .menu2 {
     border-radius: 50%;
@@ -413,40 +378,6 @@ table {
     transition: 0.3s linear;
 }
 
-@media screen and (min-width:764px) {
-    .header .aside-btn {
-        display: block;
-        width: 24px;
-        height: 24px;
-        border-radius: 100%;
-        cursor: pointer;
-        margin: 20px 0;
-        z-index: 99;
-        background: url(../img/border1.png) center center;
-        box-sizing: border-box;
-    }
-    .header .aside-btn.active {
-        background: url(../img/border1.png) center center no-repeat;
-        box-sizing: border-box;
-        padding: 0;
-        border: 6px solid rgba(64, 160, 255, 0.9);
-        /* width: 30px;
-        height: 30px; */
-    }
-
-
-    .header::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 38px;
-        width: 12px;
-        height: 164px;
-        left: 0;
-        z-index: -1;
-        border-right: 1px dotted rgba(235, 234, 234, 0.5);
-    }
-}
 
 .navbar {
     position: fixed;
@@ -615,14 +546,17 @@ table {
     font-family: "PingFang SC", "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 }
 
-.main .main-mask {
+/* .main .main-mask {
     width: 100%;
     height: 100%;
     position: absolute;
     z-index: 8;
-}
+} */
 
 .main .main-mask2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
     z-index: 19;
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -1164,7 +1098,7 @@ table {
 }
 
 .main-3 .main-3-content {
-    width: 80%;
+    width: 100%;
     height: 80%;
     padding: 2rem;
     margin: auto;
@@ -1179,7 +1113,6 @@ table {
 .main-skill {
     max-width: 940px;
     height: 600px;
-    /* background-color: rgba(255, 255, 255, 0.349); */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -1187,22 +1120,7 @@ table {
     transition: 0.5s;
 }
 
-/* .skill-enter,
-.skill-leave-to {
-    opacity: 0;
-    transform: translateY(-40%);
-}
 
-.skill-enter-to,
-.skill-leave {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.skill-enter-active,
-.skill-leave-active {
-    transition: 0.5s
-} */
 
 .main-skill .skill-name {
     display: inline-block;
@@ -1236,6 +1154,7 @@ table {
     box-sizing: border-box;
     position: relative;
 }
+
 
 .main-skill .skill-info .skill-desc {
     position: absolute;
@@ -1356,9 +1275,8 @@ table {
     display: inline-block;
     width: 160px;
     height: 160px;
-    top: 60px;
-    margin: 0 auto;
-    /* background-color: #666; */
+    top: 50%;
+    margin-top: -80px;
     box-sizing: border-box;
     transition: all 0.8s ease;
     z-index: 1
@@ -2005,4 +1923,106 @@ table {
 }
 .contact-enter-active, .content-leave-active{
     transition: 2s ease-in-out;
+}
+
+
+
+
+@media screen and (min-width:777px) {
+    .w-main{
+        display: none;
+    }
+    .header .aside-btn {
+        display: block;
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+        cursor: pointer;
+        margin: 20px 0;
+        z-index: 99;
+        background: url(../img/border1.png) center center;
+        box-sizing: border-box;
+    }
+    .header .aside-btn.active {
+        background: url(../img/border1.png) center center no-repeat;
+        box-sizing: border-box;
+        padding: 0;
+        border: 6px solid rgba(64, 160, 255, 0.9);
+        /* width: 30px;
+        height: 30px; */
+    }
+    .header::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 38px;
+        width: 12px;
+        height: 164px;
+        left: 0;
+        z-index: -1;
+        border-right: 1px dotted rgba(235, 234, 234, 0.5);
+    }
+    .menu1:hover .menu-bar {
+        background-color: #409EFF;
+        transition: 0.3s linear;
+    }
+    .menu1:hover::before {
+        width: 20px;
+        background-color: #409EFF;
+        transform: rotate(45deg) translate(-6px, 2px);
+        -ms-transform: rotate(45deg) translate(-6px, 2px);
+        /* IE 9 */
+        -moz-transform: rotate(45deg) translate(-6px, 2px);
+        /* Firefox */
+        -webkit-transform: rotate(-45deg) translate(-6px, 2px);
+        /* Safari 和 Chrome */
+        -o-transform: rotate(45deg) translate(-6px, 2px);
+        /* Opera */
+        transition: 0.3s linear;
+    }
+    .menu1:hover::after {
+        width: 20px;
+        background-color: #409EFF;
+        transform: rotate(-45deg) translate(-6px, -2px);
+        -ms-transform: rotate(-45deg) translate(-6px, -2px);
+        -moz-transform: rotate(-45deg) translate(-6px, -2px);
+        -webkit-transform: rotate(45deg) translate(-6px, -2px);
+        -o-transform: rotate(-45deg) translate(-6px, -2px);
+        transition: 0.3s linear;
+    }
+    
+}
+@media screen and (max-width:964px){
+    .main-skill .skill-info {
+        width: 233px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width:777px){
+
+    .header{
+        display: none;
+    }
+    .menu-title{
+        display: none;
+    }
+    .menu{
+        top:0;
+        right: 1rem;
+    }
+    .main-header{
+        height: 60px;
+        width: 228px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        /* border-radius: 4px; */
+        text-align: center;
+        z-index: 9;
+        background-color: transparent;
+        border: none;
+        /* transition: 0.5s ease; */
+        cursor: none;
+    }
 }
