@@ -723,61 +723,9 @@ table {
 
 .main-3 {
     position: relative;
-    background-color: rgb(146, 90, 74);
+    background: linear-gradient(270deg,#ff5f6d,#ffc371);
 }
 
-.sky {
-    height: 480px;
-    width: 100%;
-    background: transparent;
-    position: absolute;
-    overflow: hidden;
-}
-
-.sky .clouds_one {
-    background: url("../images/cloud_one.png");
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 300%;
-    -webkit-animation: cloud_one 100s linear infinite;
-    -moz-animation: cloud_one 100s linear infinite;
-    -o-animation: cloud_one 100s linear infinite;
-    animation: cloud_one 100s linear infinite;
-    -webkit-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-
-@-webkit-keyframes cloud_one {
-    0% {
-        left: 0
-    }
-    100% {
-        left: -200%
-    }
-}
-
-@-moz-keyframes cloud_one {
-    0% {
-        left: 0
-    }
-    100% {
-        left: -200%
-    }
-}
-
-@keyframes cloud_one {
-    0% {
-        left: 0
-    }
-    100% {
-        left: -200%
-    }
-}
 
 .main-4 {
     position: relative;
