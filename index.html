@@ -34,11 +34,11 @@
 
         <div class="container" id="container" @touchmove.prevent="touch2" @touchstart="touch1" @touchend="touchHandle">
             <div class="header">
-                <span @click="slide(0,0,0)" class="aside-btn" :class="pageI===0 ? pageFlag : ''" title="首页"></span>
-                <span @click="slide(0,0,1)" class="aside-btn" :class="pageI===1 ? pageFlag : ''" title="关于"></span>
-                <span @click="slide(0,0,2)" class="aside-btn" :class="pageI===2 ? pageFlag : ''" title="技能"></span>
-                <span @click="slide(0,0,3)" class="aside-btn" :class="pageI===3 ? pageFlag : ''" title="作品"></span>
-                <span @click="slide(0,0,4)" class="aside-btn" :class="pageI===4 ? pageFlag : ''" title="联系"></span>
+                <span @click="slide(0,0,0)" class="aside-btn" :class="pageI===0 ? pageFlag+'0'+' btnactive' : ''" title="首页"></span>
+                <span @click="slide(0,0,1)" class="aside-btn" :class="pageI===1 ? pageFlag+'1'+' btnactive' : ''" title="关于"></span>
+                <span @click="slide(0,0,2)" class="aside-btn" :class="pageI===2 ? pageFlag+'2'+' btnactive' : ''" title="技能"></span>
+                <span @click="slide(0,0,3)" class="aside-btn" :class="pageI===3 ? pageFlag+'3'+' btnactive' : ''" title="作品"></span>
+                <span @click="slide(0,0,4)" class="aside-btn" :class="pageI===4 ? pageFlag+'4'+' btnactive' : ''" title="联系"></span>
             </div>
 
             <div @click="toggleMenu" :class="isMenu ? menu2 : menu1" class="menu" @mouseover="menuTitle=true"
@@ -92,9 +92,14 @@
             <div class="main" :style="'top: '+ top" id="main" @wheel.passive="wheelHandle($event)">
                  <div class="w-main-bottom">
                     <!-- <span>Dylan's resume</span> -->
-                    <span class="w-bottom-up" v-show="pageI !== 4"><img src="./lib/img/up.png" alt=""></span>
+                    <span class="w-bottom-up" v-show="pageI !== 4"  @click="slide(0,0,0)"></span>
                     <span class="w-bottom-info" v-show="pageI === 4">© 2019 Dylan</span>
                 </div>
+                <transition name="backtotop">
+                    <div class="back-to-top" v-show="pageI===4 || (!isMobile && pageI !== 0)" @click="slide(0,0,0)">
+                        <span class="back-to-top-ico"></span>
+                    </div>
+                </transition>
                 <div class="main-header ">
                     <span class="main-header-author">Dylan</span>
                     <div class="main-header-resume">
@@ -300,7 +305,7 @@
                                     <div class="w-pro-info">
                                         <span>{{item.desc}}</span>
                                     </div>
-                                    <a :href="item.url"><img src="./lib/img/Link.png" alt=""></a>
+                                    <a :href="item.url"><span class="w-pro-link"></span></a>
                                 </div>
                             </div>
                             <div class="w-pro-nav">
@@ -370,7 +375,7 @@
                                 <a class="c-link-l" v-for="item in contactInfo" :key="item.id"
                                     @mouseover="item.flag=true" @mouseleave="item.flag=false" :href="item.href"
                                     target="_blank">
-                                    <img :src="item.src" alt="">
+                                    <span :class="'c-link-' + item.id" class="c-link-img"></span>
                                     <transition name="contact-link">
                                         <span class="c-link-i" v-show="item.flag"
                                             v-html="item.title || item.img"></span>
@@ -445,35 +450,30 @@
                     contactInfo: [
                         {
                             "id": 0,
-                            "src": "./lib/img/github.png",
                             "flag": false,
                             "title": "<span>Github</span>",
                             "href": "https://github.com/Mr-Format"
                         },
                         {
                             "id": 1,
-                            "src": "./lib/img/wechat.png",
                             "flag": false,
-                            "img": "<div><img src='./lib/img/wx2.jpg' alt='可能是微信的二维码'/></div>",
+                            "img": "<div class='c-link-qr-wx'></div>",
                             "href": "javascript:"
                         },
                         {
                             "id": 2,
-                            "src": "./lib/img/qq.png",
                             "flag": false,
-                            "title": "<div><img src='./lib/img/qq2.jpg' alt='可能是QQ的二维码'/></div>",
-                            "href": "javascript:"
-                        },
-                        {
-                            "id": 4,
-                            "src": "./lib/img/weibo.png",
-                            "flag": false,
-                            "title": "<div><img src='./lib/img/wb2.jpg' alt='可能是weibo的二维码'/></div>",
+                            "title": "<div  class='c-link-qr-qq'></div>",
                             "href": "javascript:"
                         },
                         {
                             "id": 3,
-                            "src": "./lib/img/zhihu.png",
+                            "flag": false,
+                            "title": "<div class='c-link-qr-wb'></div>",
+                            "href": "javascript:"
+                        },
+                        {
+                            "id": 4,
                             "flag": false,
                             "title": "<span>知乎</span>",
                             "href": "https://www.zhihu.com/people/deng-xin-84-86/activities"
@@ -516,13 +516,20 @@
                         "id": 6,
                         "info": "我的简历（本站）"
                     }],
-                    rotationSize: [{ "top": 60, "left": 0, "width": 400, "height": 240, "zIndex": 1, "opacity": 0 },
+                    rotationSize: [{ "top": 48, "left": 0, "width": 320, "height": 192, "zIndex": 1, "opacity": 0 },
+                    { "top": 48, "left": 0, "width": 320, "height": 192, "zIndex": 2, "opacity": 40 },
+                    { "top": 24, "left": 100, "width": 400, "height": 240, "zIndex": 3, "opacity": 70 },
+                    { "top": 0, "left": 200, "width": 480, "height": 288, "zIndex": 4, "opacity": 100 },
+                    { "top": 24, "left": 400, "width": 400, "height": 240, "zIndex": 3, "opacity": 70 },
+                    { "top": 48, "left": 600, "width": 320, "height": 192, "zIndex": 2, "opacity": 40 },
+                    { "top": 48, "left": 600, "width": 320, "height": 192, "zIndex": 1, "opacity": 0 }],
+                    /* rotationSize: [{ "top": 60, "left": 0, "width": 400, "height": 240, "zIndex": 1, "opacity": 0 },
                     { "top": 60, "left": 0, "width": 400, "height": 240, "zIndex": 2, "opacity": 40 },
                     { "top": 30, "left": 150, "width": 500, "height": 300, "zIndex": 3, "opacity": 70 },
                     { "top": 0, "left": 300, "width": 600, "height": 360, "zIndex": 4, "opacity": 100 },
                     { "top": 30, "left": 550, "width": 500, "height": 300, "zIndex": 3, "opacity": 70 },
                     { "top": 60, "left": 800, "width": 400, "height": 240, "zIndex": 2, "opacity": 40 },
-                    { "top": 60, "left": 800, "width": 400, "height": 240, "zIndex": 1, "opacity": 0 }],
+                    { "top": 60, "left": 800, "width": 400, "height": 240, "zIndex": 1, "opacity": 0 }], */
                     skill: [
                         {
                             name: "HTML5",

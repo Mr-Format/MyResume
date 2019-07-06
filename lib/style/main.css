@@ -258,12 +258,15 @@ table {
 
 .header {
     position: absolute;
+    width: 36px;
     z-index: 19;
-    display: block;
+    display: flex;
     flex-flow: column;
+    align-items: center;
     transform: translateY(-50%);
     top: 50%;
     right: 6.4rem;
+    text-align: center;
 }
 
 .menu {
@@ -472,48 +475,48 @@ table {
     width: 20px;
     height: 26px;
     margin-right: 20px;
-    background-image: url(../img/icon.png);
+    background-image: url(../img/sprite.png);
     background-repeat: no-repeat;
 }
 
 .navbar ul li a.home .menu-ico {
-    background-position: 0 0;
+    background-position: 0 -50px;
 }
 
 .navbar ul li a.about .menu-ico {
-    background-position: -30px 0;
+    background-position: -30px -50px;
 }
 
 .navbar ul li a.skills .menu-ico {
-    background-position: -60px 0;
+    background-position: -60px -50px;
 }
 
 .navbar ul li a.projects .menu-ico {
-    background-position: -90px 0;
+    background-position: -90px -50px;
 }
 
 .navbar ul li a.others .menu-ico {
-    background-position: -120px 0;
+    background-position: -120px -50px;
 }
 
 .navbar ul li a.home.active .menu-ico {
-    background-position: 0 -30px;
+    background-position: 0 -80px;
 }
 
 .navbar ul li a.about.active .menu-ico {
-    background-position: -30px -30px;
+    background-position: -30px -80px;
 }
 
 .navbar ul li a.skills.active .menu-ico {
-    background-position: -60px -30px;
+    background-position: -60px -80px;
 }
 
 .navbar ul li a.projects.active .menu-ico {
-    background-position: -90px -30px;
+    background-position: -90px -80px;
 }
 
 .navbar ul li a.others.active .menu-ico {
-    background-position: -120px -30px;
+    background-position: -120px -80px;
 }
 
 .open-enter,
@@ -543,12 +546,6 @@ table {
     font-family: "PingFang SC", "Helvetica Neue", Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
 }
 
-/* .main .main-mask {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 8;
-} */
 
 .main .main-mask2 {
     width: 100%;
@@ -1265,8 +1262,8 @@ table {
 .skill-wrapper .left-circle.skill-HTML5 {
     border-top: 20px solid #00CCFF;
     border-left: 20px solid #00CCFF;
-    -webkit-animation: HTML5_L 1s linear 0.5s 1 normal;
-    animation: HTML5_L 1s linear 0.5s 1 normal;
+    -webkit-animation: HTML5_L 1s linear  1 normal;
+    animation: HTML5_L 1s linear  1 normal;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -1274,8 +1271,8 @@ table {
 .skill-wrapper .right-circle.skill-HTML5 {
     border-top: 20px solid #00CCFF;
     border-right: 20px solid #00CCFF;
-    -webkit-animation: HTML5_R 0.4s linear 1.5s 1 normal;
-    animation: HTML5_R 0.4s linear 1.5s 1 normal;
+    -webkit-animation: HTML5_R 0.4s linear 1s 1 normal;
+    animation: HTML5_R 0.4s linear 1s 1 normal;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -1445,8 +1442,8 @@ table {
     border-top: 20px solid #D24D57;
     border-left: 20px solid #D24D57;
     /* transform: rotate(-45deg); */
-    -webkit-animation: JavaScript_L 1s linear 0.5s 1 normal;
-    animation: JavaScript_L 1s linear 0.5s 1 normal;
+    -webkit-animation: JavaScript_L 1s linear  1 normal;
+    animation: JavaScript_L 1s linear  1 normal;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -1455,8 +1452,8 @@ table {
     border-top: 20px solid #D24D57;
     border-right: 20px solid #D24D57;
     /* transform: rotate(-55.8deg); */
-    -webkit-animation: JavaScript_R 0.45s linear 1.5s 1 normal;
-    animation: JavaScript_R 0.45s linear 1.5s 1 normal;
+    -webkit-animation: JavaScript_R 0.45s linear 1s 1 normal;
+    animation: JavaScript_R 0.45s linear 1s 1 normal;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -1465,8 +1462,8 @@ table {
 .skill-wrapper .left-circle.skill-CSS3 {
     border-top: 20px solid #AEDD81;
     border-left: 20px solid #AEDD81;
-    -webkit-animation: CSS3_L 1s linear 0.5s 1 normal;
-    animation: CSS3_L 1s linear 0.5s 1 normal;
+    -webkit-animation: CSS3_L 1s linear  1 normal;
+    animation: CSS3_L 1s linear  1 normal;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -1474,8 +1471,8 @@ table {
 .skill-wrapper .right-circle.skill-CSS3 {
     border-top: 20px solid #AEDD81;
     border-right: 20px solid #AEDD81;
-    -webkit-animation: CSS3_R 0.22s linear 1.5s 1 normal;
-    animation: CSS3_R 0.22s linear 1.5s 1 normal;
+    -webkit-animation: CSS3_R 0.22s linear 1s 1 normal;
+    animation: CSS3_R 0.22s linear 1s 1 normal;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -1484,8 +1481,8 @@ table {
 .skill-wrapper .left-circle.skill-Vue {
     border-top: 20px solid #3fb783;
     border-left: 20px solid #3fb783;
-    -webkit-animation: Vue_L 1.5s linear 0.5s 1 normal;
-    animation: Vue_L 1.5s linear 0.5s 1 normal;
+    -webkit-animation: Vue_L 1.5s linear  1 normal;
+    animation: Vue_L 1.5s linear  1 normal;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -1501,8 +1498,8 @@ table {
 .skill-wrapper .left-circle.skill-jQuery {
     border-top: 20px solid #1594f5;
     border-left: 20px solid #1594f5;
-    -webkit-animation: jQuery_L 1s linear 0.5s 1 normal;
-    animation: jQuery_L 1s linear 0.5s 1 normal;
+    -webkit-animation: jQuery_L 1s linear  1 normal;
+    animation: jQuery_L 1s linear  1 normal;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -1518,8 +1515,8 @@ table {
 .skill-wrapper .left-circle.skill-Python {
     border-top: 20px solid #fecc41;
     border-left: 20px solid #fecc41;
-    -webkit-animation: Python_L 0.6s linear 0.5s 1 normal;
-    animation: Python_L 0.6s linear 0.5s 1 normal;
+    -webkit-animation: Python_L 0.6s linear  1 normal;
+    animation: Python_L 0.6s linear 1 normal;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
@@ -1534,8 +1531,8 @@ table {
 
 .main-4-container {
     position: absolute;
-    width: 1200px;
-    height: 360px;
+    width: 926px;
+    height: 292px;
     top: 50%;
     transform: translate(-50%, -50%);
     left: 50%;
@@ -1544,8 +1541,8 @@ table {
 
 
 .main-4-content {
-    width: 1204px;
-    height: 364px;
+    width: 926px;
+    height: 292px;
     top: 0;
     margin: 0 auto;
     z-index: 9;
@@ -1772,13 +1769,16 @@ table {
 }
 .container .main-5-content .c-link .c-link-l{
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 40px;
     height: 40px;
     border-radius: 100%;
     box-shadow: 0 0 2px rgba(204, 204, 204, 0.226);
     background-color: rgba(0, 0, 0, 0.4);
     transition: 0.3s ease;
+    
 }
 
 .container .main-5-content .c-link .c-link-l:hover{
@@ -1786,15 +1786,28 @@ table {
     transition: 0.5s ease;
 }
 
-
-
-
-.container .main-5-content .c-link .c-link-l>img{
+.c-link .c-link-l .c-link-img{
     display: inline-block;
     width: 24px;
     height: 24px;
-    padding: 8px;
+    background: url(../img/sprite.png)  no-repeat;
 }
+.c-link .c-link-l .c-link-0{
+    background-position: 1px -126px;
+}
+.c-link .c-link-l .c-link-1{
+    background-position: -23px -126px;
+}
+.c-link .c-link-l .c-link-2{
+    background-position: -47px -126px;
+}
+.c-link .c-link-l .c-link-3{
+    background-position: -71px -126px;
+}
+.c-link .c-link-l .c-link-4{
+    background-position: -95px -126px;
+}
+
 
 
 .container .main-5-content .c-link .c-link-l .c-link-i>span{
@@ -1821,21 +1834,35 @@ table {
     bottom: -6px;
     left: 25px;
 }
-
+/* <img src='./lib/img/wx2.jpg' alt='可能是微信的二维码'/> */
 
 .container .main-5-content .c-link .c-link-l .c-link-i>div{
     position: absolute;
     top: -156px;
     left: -50px;
     width: 140px;
+    height: 140px;
     display: inline-block;
     border: 2px solid rgb(89, 177, 248);;
     border-radius: 4px;
-    background-color: rgb(89, 177, 248);
+
 }
-.container .main-5-content .c-link .c-link-l .c-link-i>div>img{
-    vertical-align: top;
+
+.c-link .c-link-l .c-link-i .c-link-qr-wx{
+    background: url(../img/qrcode.jpg) 0 0;
+    background-repeat: no-repeat;
 }
+.c-link .c-link-l .c-link-i .c-link-qr-qq{
+    background: url(../img/qrcode.jpg) -140px 0;
+    background-repeat: no-repeat;
+}
+.c-link .c-link-l .c-link-i .c-link-qr-wb{
+    background: url(../img/qrcode.jpg) -280px 0;
+    background-repeat: no-repeat;
+}
+
+
+
 .container .main-5-content .c-link .c-link-l .c-link-i>div::after{
     content: "";
     position: absolute;
@@ -1892,35 +1919,63 @@ table {
         display: none;
     }
     .header .aside-btn {
-        display: block;
-        width: 24px;
-        height: 24px;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
         border-radius: 100%;
         cursor: pointer;
-        margin: 20px 0;
+        margin: 16px 0;
         z-index: 99;
-        background: url(../img/border1.png) center center;
+        background-color: rgba(51, 51, 51, 0.2);
         box-sizing: border-box;
     }
-    .header .aside-btn.active {
-        background: url(../img/border1.png) center center no-repeat;
-        box-sizing: border-box;
-        padding: 0;
-        border: 6px solid rgba(64, 160, 255, 0.9);
-        /* width: 30px;
-        height: 30px; */
+
+    .header .aside-btn.btnactive{
+        width: 32px;
+        height: 32px;
+        background: #333 url(../img/sprite.png) no-repeat;
+        animation: test 0.5s ease 1;
+        -webkit-animation: test 0.5s ease 1;
     }
-    .header::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 38px;
-        width: 12px;
-        height: 164px;
-        left: 0;
-        z-index: -1;
-        border-right: 1px dotted rgba(235, 234, 234, 0.5);
+    .header .aside-btn.active0 {
+        background-position: 0 0;        
     }
+    .header .aside-btn.active1 {
+        background-position: -32px 0;  
+    }
+    .header .aside-btn.active2 {
+        background-position: -64px 0;  
+    }
+    .header .aside-btn.active3 {
+        background-position: -96px 0;  
+    }
+    .header .aside-btn.active4 {
+        background-position: -128px 0;  
+    }
+
+
+    @keyframes test{
+        from{
+            opacity: 0;
+            transform: scale(0.5)
+        }
+        to{
+            opacity: 1;
+            transform: scale(1)
+        }
+    }
+
+    @-webkit-keyframes test{
+        from{
+            opacity: 0;
+            transform: scale(0.5)
+        }
+        to{
+            opacity: 1;
+            transform: scale(1)
+        }
+    }
+
     .menu1:hover .menu-bar {
         background-color: #409EFF;
         transition: 0.3s linear;
@@ -2458,7 +2513,11 @@ table {
     margin-top: 12px;
     border-radius: 4px;
 }
-.w-pro>a>img{
+.w-pro>a>.w-pro-link{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/sprite.png)  no-repeat -20px -160px;
     margin-top: 8px;
 }
 
@@ -2484,7 +2543,9 @@ table {
 }
 .w-bottom-up{
     display: inline-block;
-  
+    width: 20px;
+    height: 20px;
+    background: url(../img/sprite.png) no-repeat 0 -160px;
     -webkit-animation: w_up 1.4s ease infinite;
     animation: w_up 1.4s ease infinite;
     
@@ -2514,4 +2575,43 @@ table {
     .w-bottom-info{
         color: #ccc;
     }
+    .main .back-to-top{
+        bottom: 3rem;
+        right: 1rem;
+    }
+}
+
+
+.back-to-top{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    bottom: 4rem;
+    right: 6rem;
+    width: 42px;
+    z-index: 9;
+    height: 40px;
+    opacity: 0.5;
+    background-color: #333;
+}
+
+.back-to-top .back-to-top-ico{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: url(../img/sprite.png) no-repeat -39px -156px;
+}
+
+.backtotop-enter, .backtotop-leave-to{
+    transform: translateY(50%);
+    opacity: 0;
+}
+.backtotop-enter-to, .backtotop-leave{
+    transform: translateY(0);
+    opacity: 0.5;
+}
+.backtotop-enter-active, .backtotop-leave-active{
+    transition: 1s ease;
 }
