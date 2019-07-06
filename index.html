@@ -263,12 +263,15 @@
                                     </span>
                                     <div class="skill-wrapper left-progress">
                                         <div class="skill-circle left-circle"
-                                            :class="pageI===2 ? 'skill-'+ item.name : ''">
+                                            :class="isMobile || pageI===2 ? 'skill-'+ item.name : ''"
+                                  
+                                            >
                                         </div>
                                     </div>
                                     <div class="skill-wrapper right-progress">
                                         <div class="skill-circle right-circle"
-                                            :class="pageI===2 ? 'skill-'+ item.name : ''">
+                                            :class="isMobile || pageI===2 ? 'skill-'+ item.name : ''"
+                                            >
                                         </div>
                                     </div>
                                 </div>
@@ -285,7 +288,29 @@
                         <div class="sun-3"></div>
                         <div class="sun-4"></div>
                     </div>
-                    <div class="main-4-title "></div>
+                    <div class="w-pro-container ">
+                        <div class="w-pro-wrapper">
+                            <div class="w-pro-content" ref="pro" @touchstart="promove1" @touchmove="promove2" @touchend="promove3" :style="'left:' + proleft +'px;'+ 'width:' + proObj.length * 300 + 'px'">
+                                <div class="w-pro-1 w-pro" v-for="item in proObj" :key="item.id">
+                                    <div class="w-pro-prev">
+                                        <img :src="item.src" alt="">
+                                    </div>
+                                    <div class="w-pro-info">
+                                        <span>{{item.desc}}</span>
+                                    </div>
+                                    <a :href="item.url"></a>
+                                </div>
+                            </div>
+                            <div class="w-pro-nav">
+                                <span class="w-pro-bar" :class="proIndex ===0 ? proactive : ''"></span>
+                                <span class="w-pro-bar" :class="proIndex ===1 ? proactive : ''"></span>
+                                <span class="w-pro-bar" :class="proIndex ===2 ? proactive : ''"></span>
+                                <span class="w-pro-bar" :class="proIndex ===3 ? proactive : ''"></span>
+                                <span class="w-pro-bar" :class="proIndex ===4 ? proactive : ''"></span>
+                            </div>
+                    
+                        </div>
+                    </div>
 
                     <div class="main-4-container" @mouseover="showRotationBtn" @mouseout="hiddenRotationBtn">
                         <div class="main-4-content ">
@@ -361,14 +386,60 @@
             var vm = new Vue({
                 el: '#app',
                 data: {
+                    proactive: "pro-bar-active",
+                    proMoveFlag: false,
+                    proIndex: 0,
+                    proleft: 0,
+                    isMobile: false,
                     t_x_s: "",
                     t_y_s: "",
                     t_x_e: "",
                     t_y_e: "",
+                    p_x_s: "",
+                    p_y_s: "",
+                    p_x_e: "",
+                    p_y_e: "",
+                    proTimer:"",
 
-
+                    proObj: [
+                        {
+                            "id": 0,
+                            "name": "个人简历（本站）",
+                            "desc": "使用Vue.js开发的个人简历网站，使用了HTML5、CSS3、Javascript技术，响应式布局结构，能够兼容PC端、移动端浏览器以及微信浏览器。主体结构部分使用了wheel事件（PC端）和touch事件（移动端）。",
+                            "src" : "./lib/images/w简历.jpg",
+                            "url": "https://mr-format.github.io/MyResume"
+                        },
+                        {
+                            "id": 1,
+                            "name": "扫雷",
+                            "desc": "使用前端技术开发的网页版扫雷游戏，基本实现了PC版游戏的全部功能，支持鼠标左右键同时点击事件，支持可选游戏难度，支持自定义游戏功能。",
+                            "src" : "./lib/images/w扫雷.jpg",
+                            "url": "https://mr-format.github.io/static/minesweeper/index.html"
+                        },
+                        {
+                            "id": 2,
+                            "name": "用户管理系统",
+                            "desc": "这是一个用户数据管理系统，前端开发环境为vue-cli，后端通过npm提供的json-server模块模拟API数据接口，并使用vue-resrouce实现对后台数据的增、删、改、查。",
+                            "src" : "./lib/images/w用户管理.jpg",
+                            "url": "https://github.com/Mr-Format/manage"
+                        },
+                        {
+                            "id": 3,
+                            "name": "个人博客",
+                            "desc": "使用Vue全家桶以及Element-UI开发的个人博客项目，主体为单页面结构，通过前端路由实现不同内容之间的切换，实现了响应式布局、分页功能、锚链接平滑跳转功能、搜索功能。",
+                            "src" : "./lib/images/w博客.jpg",
+                            "url": "https://mr-format.github.io"
+                        },
+                        {
+                            "id": 4,
+                            "name": "手机商城",
+                            "desc": "一个移动端购物网站，目前实现了新闻资讯、图片分享、商品列表以及购物车功能。选择的商品数量通过localStorage进行缓存，并可在底部购物车图标处查看，同时可在购物车页面修改选择的商品类型及数量。",
+                            "src" : "./lib/images/w手机商城.jpg",
+                            "url": "https://mr-format.github.io/static/mobilepro/index.html"
+                        },
+                    ],
                     // scrollFlag: false,
-                    /* 以下为移动端数据 */
+                    /* 以下为移pc数据 */
                     contactInfo: [
                         {
                             "id": 0,
@@ -540,7 +611,7 @@
 
                 },
                 mounted() {
-
+                    this.checkClient()
 
 
                     /* 以下为PC端数据 */
@@ -562,8 +633,61 @@
 
                 },
                 methods: {
+                    promove1(e){
+                        let p = e.touches[0]
+                        this.p_x_s = p.pageX
+                        this.p_y_s = p.pageY
+                    },
+                    promove2(e){
+                        let p = e.touches[0]
+                        this.p_x_e = p.pageX
+                        this.p_y_e = p.pageY
+                    },
+                    promove3(e){
+                        if(this.proMoveFlag){return}
+                        let len = this.proObj.length
+                        let p_x = this.p_x_e - this.p_x_s
+                        let p_y = this.p_y_e - this.p_y_s
+                        let pos = parseInt(this.$refs.pro.style.left)
+                        if(Math.abs(p_x) > Math.abs(p_y) && p_x > 50 && this.p_y_e){
+                            if(this.proleft >= 0){return}
+                            this.proAnimat(1, 300)
+                        } else if (Math.abs(p_x) > Math.abs(p_y) && p_x < -50 && this.p_y_e){
+                            if(this.proleft <= -300*(len-1)){return}
+                            this.proAnimat(-1, 300)
+                        }
+                        this.p_x_s = this.p_y_s = this.p_x_s = this.p_y_s = ""
+                    },
+                    proAnimat(n,len){
+                        /* n方向 ， len距离 */
+                        this.proMoveFlag = true
+                        let cur = this.proleft
+                        let tar = this.proleft + n * len
+                        let step = (tar-cur)/20
+                        this.proTimer = setInterval(() => {
+                            this.proleft += step
+                            if(n>0 && this.proleft >= tar){
+                                this.proleft = tar
+                                clearInterval(this.proTimer)
+                                this.proMoveFlag =false
+                                this.proIndex--
+                            }
+                            if(n<0 && this.proleft <= tar){
+                                this.proleft = tar
+                                clearInterval(this.proTimer)
+                                this.proMoveFlag = false
+                                this.proIndex++
+                            }
+                        }, 16);
+                    },
 
-
+                    checkClient(){
+                        if(document.documentElement.clientWidth < 777 || document.body.clientWidth < 777){
+                            this.isMobile = true
+                        } else{
+                            this.isMobile = false
+                        }
+                    },
 
                     /* 以下为PC端数据 */
                     rotationChange(event) {
@@ -668,7 +792,7 @@
                         }
                     },
                     showSkillDesc(event) {
-                        if(document.documentElement.clientWidth < 777 || document.body.clientWidth < 777){
+                        if(this.isMobile){
                             return
                         }
                         let index = ""
@@ -684,9 +808,7 @@
                     },
                     skillPro(event) {
                         // console.log(event)
-                        if(document.documentElement.clientWidth < 777 || document.body.clientWidth < 777){
-                            return
-                        }
+                        if(this.isMobile){return}
                         let index = event.target.getAttribute("name")
                         if (event.type === "mouseover") {
                             event.target.innerText = this.skill[index].progress + "%"
