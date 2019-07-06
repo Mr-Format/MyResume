@@ -32,7 +32,7 @@
         </div>
 
 
-        <div class="container" id="container" @touchmove="touch2" @touchstart="touch1" @touchend.passive="touchHandle">
+        <div class="container" id="container" @touchmove.prevent="touch2" @touchstart="touch1" @touchend="touchHandle">
             <div class="header">
                 <span @click="slide(0,0,0)" class="aside-btn" :class="pageI===0 ? pageFlag : ''" title="首页"></span>
                 <span @click="slide(0,0,1)" class="aside-btn" :class="pageI===1 ? pageFlag : ''" title="关于"></span>
@@ -788,7 +788,7 @@
                             // 小于0，向下滚
                             this.slide(-1)
                         }
-                        event.preventDefault();
+                       
 
                     },
                     slide(m, n = 1, p) {
