@@ -2237,6 +2237,7 @@ table {
         width: 96%;
         margin: 0 auto;
         display: flex;
+        z-index: 1;
     }
 
     .main-skill {
