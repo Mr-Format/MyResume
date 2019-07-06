@@ -176,7 +176,7 @@ table {
 }
 .loading-right-leave-active,.loading-right-enter-active
 {
-    transition: 1.5s
+    transition: 1s
 }
 
 .loading .loading-ico {
@@ -187,7 +187,6 @@ table {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 .loading .loading-ico-1 {
@@ -1951,7 +1950,7 @@ table {
         height: 60px;
         width: 228px;
         position: fixed;
-        top: 3rem;
+        top: 2rem;
         left: 3rem;
         border-radius: 4px;
         text-align: center;
@@ -2140,7 +2139,7 @@ table {
     }
 
     .w-home-info{
-        margin-top: -60px;
+        /* margin-top: -60px; */
         line-height: 3;
     }
     .w-home-dylan{
