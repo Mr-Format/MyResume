@@ -2368,5 +2368,10 @@ table {
 .skill-wrapper .right-circle.skill-Python {
     transform: rotate(-136deg);
 }
-
+.main-4-sun{
+    display: none;
+}
+.main-4-content{
+    display: none;
+}
 }
