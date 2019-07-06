@@ -32,7 +32,7 @@
         </div>
 
 
-        <div class="container" id="container" @touchmove="touch2" @touchstart="touch1" @touchend="touchHandle">
+        <div class="container" id="container" @touchmove="touch2" @touchstart="touch1" @touchend.passive="touchHandle">
             <div class="header">
                 <span @click="slide(0,0,0)" class="aside-btn" :class="pageI===0 ? pageFlag : ''" title="首页"></span>
                 <span @click="slide(0,0,1)" class="aside-btn" :class="pageI===1 ? pageFlag : ''" title="关于"></span>
@@ -89,7 +89,7 @@
             </transition>
 
 
-            <div class="main" :style="'top: '+ top" id="main" @wheel="wheelHandle($event)">
+            <div class="main" :style="'top: '+ top" id="main" @wheel.passive="wheelHandle($event)">
                 <!--  <div class="w-main-header">
                     <span>Dylan's resume</span>
                 </div> -->
