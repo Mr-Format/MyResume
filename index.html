@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 解决移动端全屏时高度位移问题 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dylan | 前端简历</title>
     <link rel="shortcut icon" href="./lib/img/logo.jpg" type="image/x-icon">
@@ -31,7 +32,7 @@
         </div>
 
 
-        <div class="container" id="container" @touchmove="touch2"  @touchstart="touch1" @touchend="touchHandle">
+        <div class="container" id="container" @touchmove="touch2" @touchstart="touch1" @touchend="touchHandle">
             <div class="header">
                 <span @click="slide(0,0,0)" class="aside-btn" :class="pageI===0 ? pageFlag : ''" title="首页"></span>
                 <span @click="slide(0,0,1)" class="aside-btn" :class="pageI===1 ? pageFlag : ''" title="关于"></span>
@@ -89,6 +90,9 @@
 
 
             <div class="main" :style="'top: '+ top" id="main" @wheel="wheelHandle($event)">
+                <!--  <div class="w-main-header">
+                    <span>Dylan's resume</span>
+                </div> -->
                 <div class="main-header ">
                     <span class="main-header-author">Dylan</span>
                     <div class="main-header-resume">
@@ -113,6 +117,13 @@
                     </transition>
 
                     <div class="main-1-content ">
+                        <div class="w-home-info">
+                            <img src="./lib/img/dylan.jpg" alt="" class="w-home-dylan">
+                            <p class="w-home-p1">Hello,I'm Yin Qiang</p>
+                            <p class="w-home-p2">我叫尹强</p>
+                            <p class="w-home-p3">一名前端技术爱好者</p>
+                            <p class="w-home-p4">dylan_17@qq.com</p>
+                        </div>
                         <div class="main-1-info" @mousemove="infoMove" @mouseout="infoOver" :style="iP">
                             <span class="main-1-info-1">Hello,I'm Yin Qiang</span>
                             <span class="main-1-info-2">我叫尹强</span>
@@ -129,8 +140,47 @@
                     </div>
 
                     <!-- about start -->
+
+                    <div class="w-about-content">
+                        <div class="w-about-p1">
+                            2018年开始自学前端技术，目前对于web标准、HTTP协议有一定的了解，对HTML5、CSS3、JavaScript、Vue及相关组件的使用较为熟练。</div>
+                        <div class="w-about-p2">
+                            <div class="w-about-i1"><span>2016.01 -2019.06</span></div>
+                            <div class="w-about-i2">
+                                <span>
+                                    <p class="w-about-i2_copy">武汉同心教育沌口校区</p>
+                                    <p class="w-about-i2_post">&lt;教务主管/课程顾问&gt;</p>
+                                    <p class="w-about-i2_job">
+                                        参与同心教育沌口校区的组建，主要负责校区日常工作。
+                                    </p>
+                                </span>
+                            </div>
+                            <div class="w-about-i1"><span>2012.06 - 2015.11</span></div>
+                            <div class="w-about-i2">
+                                <span>
+                                    <p class="w-about-i2_copy">武汉乐学教育汉口校区</p>
+                                    <p class="w-about-i2_post">&lt;教务助理/主管&gt;</p>
+                                    <p class="w-about-i2_job">
+                                        负责校区周边宣传，讲义的编辑打印，学生签到管理，追踪各学期教学任务的完成情况。</p>
+                                </span>
+                            </div>
+                            <div class="w-about-i1"><span>2012.09 - 2016.12</span></div>
+                            <div class="w-about-i2">
+                                <span>
+                                    <p class="w-about-i2_copy">武汉震旦法商专修学院</p>
+                                    <p class="w-about-i2_post">&lt;会计专业&gt;</p>
+                                    <p class="w-about-i2_job">
+                                        专科 + 本科</p>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+
                     <transition name="about">
                         <div class="main-2-content" v-show="pageI===1" key="about">
+
                             <div class="main-2-about">
                                 <div class="about-item-wrapper">
                                     <div class="about-item-t">关于</div>
@@ -152,7 +202,7 @@
                                                 <div class="about-item-p1">武汉同心教育沌口校区(教务主管/课程顾问)</div>
                                                 <div class="about-item-time">&lt;2016.01 -2019.06&gt;</div>
                                                 <div class="about-item-p2">
-                                                    参与同心教育沌口校区的组建，主要负责校区日常工作，包括教学时间及课程安排、课程顾问、招聘宣传、学生信息的数据化管理、微信公众号的开发维护等等。
+                                                    ，包括教学时间及课程安排、课程顾问、招聘宣传、学生信息的数据化管理、微信公众号的开发维护等等。
                                                 </div>
                                             </div>
                                         </li>
@@ -189,11 +239,7 @@
 
                 <div class="main-3 main-bg">
                     <div :class="open ? mask2 : ''"></div>
-                    <div class="sky" v-show="pageI===2">
-                        <div class="clouds_one"></div>
-                        <div class="clouds_two"></div>
-                        <div class="clouds_three"></div>
-                    </div>
+
                     <div class="main-3-btn">
                         <button @click="handleDesc1">显示详情面板</button>
                         <button @click="handleDesc2">隐藏详情面板</button>
@@ -494,7 +540,7 @@
 
                 },
                 mounted() {
-         
+
 
 
                     /* 以下为PC端数据 */
@@ -517,7 +563,7 @@
                 },
                 methods: {
 
-               
+
 
                     /* 以下为PC端数据 */
                     rotationChange(event) {
@@ -622,6 +668,9 @@
                         }
                     },
                     showSkillDesc(event) {
+                        if(document.documentElement.clientWidth < 777 || document.body.clientWidth < 777){
+                            return
+                        }
                         let index = ""
                         // 判断当前点击的元素是否有name属性
                         if (event.target.getAttribute("name")) {
@@ -635,6 +684,9 @@
                     },
                     skillPro(event) {
                         // console.log(event)
+                        if(document.documentElement.clientWidth < 777 || document.body.clientWidth < 777){
+                            return
+                        }
                         let index = event.target.getAttribute("name")
                         if (event.type === "mouseover") {
                             event.target.innerText = this.skill[index].progress + "%"
@@ -700,33 +752,34 @@
                         this.flag = this.open
                     },
 
-                    touch1(e){
+                    touch1(e) {
                         // console.log(e.touches[0])
                         let t = e.touches[0]
                         this.t_x_s = t.pageX
                         this.t_y_s = t.pageY
                     },
-                    touch2(e){
+                    touch2(e) {
                         let t = e.touches[0]
                         this.t_x_e = t.pageX
                         this.t_y_e = t.pageY
                     },
-                    touchHandle(e){
+                    touchHandle(e) {
                         // console.log(e.changedTouches[0].pageX)
                         let t_x = this.t_x_e - this.t_x_s
                         let t_y = this.t_y_e - this.t_y_s
-                        if (Math.abs(t_y) > Math.abs(t_x) && t_y > 0 &&  this.t_y_e){
+                        if (Math.abs(t_y) > Math.abs(t_x) && t_y > 100 && this.t_y_e) {
+                            // console.log(this.t_y_e+"----" + this.t_y_s)
                             this.slide(1)
-                        } else if (Math.abs(t_y) > Math.abs(t_x) && t_y < 0 && this.t_y_e){
+                        } else if (Math.abs(t_y) > Math.abs(t_x) && t_y < -100 && this.t_y_e) {
                             // console.log(t_y)
                             this.slide(-1)
                         }
-                        this.t_x_s = this.t_y_s = this.t_x_e =this.t_y_e = 0
+                        this.t_x_s = this.t_y_s = this.t_x_e = this.t_y_e = 0
                     },
                     wheelHandle(event) {
                         let count = event.wheelDelta || -event.deltaY * 40
                         // 判断滚动方向
-    
+
                         if (count > 0) {
                             // console.log(count)
                             // 大于0，向上滚
