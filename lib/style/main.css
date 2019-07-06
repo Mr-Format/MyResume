@@ -1267,7 +1267,6 @@ table {
 .skill-wrapper .left-circle.skill-HTML5 {
     border-top: 20px solid #00CCFF;
     border-left: 20px solid #00CCFF;
-    /* transform: rotate(-45deg); */
     -webkit-animation: HTML5_L 1s linear 0.5s 1 normal;
     animation: HTML5_L 1s linear 0.5s 1 normal;
     -webkit-animation-fill-mode: both;
@@ -1277,69 +1276,49 @@ table {
 .skill-wrapper .right-circle.skill-HTML5 {
     border-top: 20px solid #00CCFF;
     border-right: 20px solid #00CCFF;
-    /* transform: rotate(-77.4deg); */
     -webkit-animation: HTML5_R 0.4s linear 1.5s 1 normal;
     animation: HTML5_R 0.4s linear 1.5s 1 normal;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
+@media screen and (min-width:777px){
 
-@keyframes HTML5_L {
-    from {
-        transform: rotate(-225deg);
+    @keyframes HTML5_L {
+        from {
+            transform: rotate(-225deg);
+        }
+        to {
+            transform: rotate(-45deg);
+        }
     }
-    to {
-        transform: rotate(-45deg);
+    
+    @-webkit-keyframes HTML5_L {
+        from {
+            transform: rotate(-225deg);
+        }
+        to {
+            transform: rotate(-45deg);
+        }
     }
-}
-
-@-webkit-keyframes HTML5_L {
-    from {
-        transform: rotate(-225deg);
+    
+    @keyframes HTML5_R {
+        0% {
+            transform: rotate(-136deg);
+        }
+        100% {
+            transform: rotate(-77.4deg);
+        }
     }
-    to {
-        transform: rotate(-45deg);
+    
+    @-webkit-keyframes HTML5_R {
+        0% {
+            transform: rotate(-136deg);
+        }
+        100% {
+            transform: rotate(-77.4deg);
+        }
     }
-}
-
-@keyframes HTML5_R {
-    0% {
-        transform: rotate(-136deg);
-    }
-    100% {
-        transform: rotate(-77.4deg);
-    }
-}
-
-@-webkit-keyframes HTML5_R {
-    0% {
-        transform: rotate(-136deg);
-    }
-    100% {
-        transform: rotate(-77.4deg);
-    }
-}
-
-.skill-wrapper .left-circle.skill-JavaScript {
-    border-top: 20px solid #D24D57;
-    border-left: 20px solid #D24D57;
-    /* transform: rotate(-45deg); */
-    -webkit-animation: JavaScript_L 1s linear 0.5s 1 normal;
-    animation: JavaScript_L 1s linear 0.5s 1 normal;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-.skill-wrapper .right-circle.skill-JavaScript {
-    border-top: 20px solid #D24D57;
-    border-right: 20px solid #D24D57;
-    /* transform: rotate(-55.8deg); */
-    -webkit-animation: JavaScript_R 0.45s linear 1.5s 1 normal;
-    animation: JavaScript_R 0.45s linear 1.5s 1 normal;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
+    
 @keyframes JavaScript_L {
     from {
         transform: rotate(-225deg);
@@ -1374,24 +1353,6 @@ table {
     100% {
         transform: rotate(-55.8deg);
     }
-}
-
-.skill-wrapper .left-circle.skill-CSS3 {
-    border-top: 20px solid #AEDD81;
-    border-left: 20px solid #AEDD81;
-    -webkit-animation: CSS3_L 1s linear 0.5s 1 normal;
-    animation: CSS3_L 1s linear 0.5s 1 normal;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-.skill-wrapper .right-circle.skill-CSS3 {
-    border-top: 20px solid #AEDD81;
-    border-right: 20px solid #AEDD81;
-    -webkit-animation: CSS3_R 0.22s linear 1.5s 1 normal;
-    animation: CSS3_R 0.22s linear 1.5s 1 normal;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
 }
 
 @keyframes CSS3_L {
@@ -1429,22 +1390,6 @@ table {
         transform: rotate(-91.8deg);
     }
 }
-
-.skill-wrapper .left-circle.skill-Vue {
-    border-top: 20px solid #3fb783;
-    border-left: 20px solid #3fb783;
-    -webkit-animation: Vue_L 1.5s linear 0.5s 1 normal;
-    animation: Vue_L 1.5s linear 0.5s 1 normal;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-.skill-wrapper .right-circle.skill-Vue {
-    border-top: 20px solid #3fb783;
-    border-right: 20px solid #3fb783;
-    transform: rotate(-135deg);
-}
-
 @keyframes Vue_L {
     from {
         transform: rotate(-225deg);
@@ -1462,22 +1407,6 @@ table {
         transform: rotate(-66.6deg);
     }
 }
-
-.skill-wrapper .left-circle.skill-jQuery {
-    border-top: 20px solid #1594f5;
-    border-left: 20px solid #1594f5;
-    -webkit-animation: jQuery_L 1s linear 0.5s 1 normal;
-    animation: jQuery_L 1s linear 0.5s 1 normal;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-.skill-wrapper .right-circle.skill-jQuery {
-    border-top: 20px solid #1594f5;
-    border-right: 20px solid #1594f5;
-    transform: rotate(-135deg);
-}
-
 @keyframes jQuery_L {
     from {
         transform: rotate(-225deg);
@@ -1495,22 +1424,6 @@ table {
         transform: rotate(-124.2deg);
     }
 }
-
-.skill-wrapper .left-circle.skill-Python {
-    border-top: 20px solid #fecc41;
-    border-left: 20px solid #fecc41;
-    -webkit-animation: Python_L 0.6s linear 0.5s 1 normal;
-    animation: Python_L 0.6s linear 0.5s 1 normal;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-.skill-wrapper .right-circle.skill-Python {
-    border-top: 20px solid #fecc41;
-    border-right: 20px solid #fecc41;
-    transform: rotate(-135deg);
-}
-
 @keyframes Python_L {
     from {
         transform: rotate(-225deg);
@@ -1528,6 +1441,98 @@ table {
         transform: rotate(-163.8deg);
     }
 }
+}
+
+.skill-wrapper .left-circle.skill-JavaScript {
+    border-top: 20px solid #D24D57;
+    border-left: 20px solid #D24D57;
+    /* transform: rotate(-45deg); */
+    -webkit-animation: JavaScript_L 1s linear 0.5s 1 normal;
+    animation: JavaScript_L 1s linear 0.5s 1 normal;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.skill-wrapper .right-circle.skill-JavaScript {
+    border-top: 20px solid #D24D57;
+    border-right: 20px solid #D24D57;
+    /* transform: rotate(-55.8deg); */
+    -webkit-animation: JavaScript_R 0.45s linear 1.5s 1 normal;
+    animation: JavaScript_R 0.45s linear 1.5s 1 normal;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+.skill-wrapper .left-circle.skill-CSS3 {
+    border-top: 20px solid #AEDD81;
+    border-left: 20px solid #AEDD81;
+    -webkit-animation: CSS3_L 1s linear 0.5s 1 normal;
+    animation: CSS3_L 1s linear 0.5s 1 normal;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.skill-wrapper .right-circle.skill-CSS3 {
+    border-top: 20px solid #AEDD81;
+    border-right: 20px solid #AEDD81;
+    -webkit-animation: CSS3_R 0.22s linear 1.5s 1 normal;
+    animation: CSS3_R 0.22s linear 1.5s 1 normal;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+.skill-wrapper .left-circle.skill-Vue {
+    border-top: 20px solid #3fb783;
+    border-left: 20px solid #3fb783;
+    -webkit-animation: Vue_L 1.5s linear 0.5s 1 normal;
+    animation: Vue_L 1.5s linear 0.5s 1 normal;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.skill-wrapper .right-circle.skill-Vue {
+    border-top: 20px solid #3fb783;
+    border-right: 20px solid #3fb783;
+    transform: rotate(-136deg);
+}
+
+
+
+.skill-wrapper .left-circle.skill-jQuery {
+    border-top: 20px solid #1594f5;
+    border-left: 20px solid #1594f5;
+    -webkit-animation: jQuery_L 1s linear 0.5s 1 normal;
+    animation: jQuery_L 1s linear 0.5s 1 normal;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.skill-wrapper .right-circle.skill-jQuery {
+    border-top: 20px solid #1594f5;
+    border-right: 20px solid #1594f5;
+    transform: rotate(-136deg);
+}
+
+
+
+.skill-wrapper .left-circle.skill-Python {
+    border-top: 20px solid #fecc41;
+    border-left: 20px solid #fecc41;
+    -webkit-animation: Python_L 0.6s linear 0.5s 1 normal;
+    animation: Python_L 0.6s linear 0.5s 1 normal;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.skill-wrapper .right-circle.skill-Python {
+    border-top: 20px solid #fecc41;
+    border-right: 20px solid #fecc41;
+    transform: rotate(-136deg);
+}
+
+
 
 .main-4-container {
     position: absolute;
@@ -2129,10 +2134,10 @@ table {
     }
 
     .main-1 .main-1-prompt{
-        top: 70px;
+        top:60px;
     }
     .main-5 .main-5-prompt{
-        top: 70px;
+        top: 30px;
     }
     .main-3-btn{
         display: none;
@@ -2277,9 +2282,12 @@ table {
         width: 100%;
         left: 0;
         margin-left: 0;
+        margin-top: 0;
         height: auto;
         padding: 1em;
         box-sizing: border-box;
+
+        transform: translateY(-48%);
     }
     .container .main-5-content .c-t{
         font-size: 1.6rem;
@@ -2297,4 +2305,68 @@ table {
     .container .main-5-content .c-link{
         justify-content: space-around;
     }
+
+
+
+    
+.skill-wrapper .left-circle.skill-HTML5 {
+    transform: rotate(-45deg);
+}
+
+.skill-wrapper .right-circle.skill-HTML5 {
+    transform: rotate(-77.4deg);
+        
+}
+
+
+.skill-wrapper .left-circle.skill-JavaScript {
+    transform: rotate(-45deg);
+}
+
+.skill-wrapper .right-circle.skill-JavaScript {
+    transform: rotate(-55.8deg);
+}
+
+
+.skill-wrapper .left-circle.skill-CSS3 {
+    transform: rotate(-45deg);
+}
+
+.skill-wrapper .right-circle.skill-CSS3 {
+    transform: rotate(-91.8deg);
+}
+
+
+.skill-wrapper .left-circle.skill-Vue {
+    transform: rotate(-66.6deg);
+}
+
+.skill-wrapper .right-circle.skill-Vue {
+    border-top: 20px solid #3fb783;
+    border-right: 20px solid #3fb783;
+    transform: rotate(-136deg);
+}
+
+
+
+.skill-wrapper .left-circle.skill-jQuery {
+    transform: rotate(-124.2deg);
+}
+
+.skill-wrapper .right-circle.skill-jQuery {
+    border-top: 20px solid #1594f5;
+    border-right: 20px solid #1594f5;
+    transform: rotate(-136deg);
+}
+
+
+
+.skill-wrapper .left-circle.skill-Python {
+    transform: rotate(-163.8deg);
+}
+
+.skill-wrapper .right-circle.skill-Python {
+    transform: rotate(-136deg);
+}
+
 }
