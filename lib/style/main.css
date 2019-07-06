@@ -351,9 +351,7 @@ table {
     background-color: #ccc;
 }
 
-.menu2:hover {
-    background-color: #409EFF;
-}
+
 
 .menu2::before {
     top: 28px;
@@ -578,7 +576,7 @@ table {
     margin-left: -75px;
     height: 50px;
     width: 150px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
     text-align: center;
     line-height: 50px;
@@ -775,7 +773,7 @@ table {
     margin-left: -75px;
     height: 50px;
     width: 150px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
     text-align: center;
     line-height: 50px;
@@ -2070,6 +2068,12 @@ table {
     .w-pro-container {
         display: none;
     }
+    .menu2:hover {
+        background-color: #409EFF;
+    }
+    .w-main-bottom{
+        display: none;
+    }
     
 }
 @media screen and (max-width:964px){
@@ -2139,7 +2143,7 @@ table {
         top:60px;
     }
     .main-5 .main-5-prompt{
-        top: 30px;
+        top: 60px;
     }
     .main-3-btn{
         display: none;
@@ -2382,6 +2386,7 @@ table {
     width: 100%;
     display: flex;
     height: 100%;
+    margin-top: -30px;
     /* padding: 30px 14px; */
     box-sizing: border-box;
     /* background-color: #fff; */
@@ -2392,7 +2397,7 @@ table {
     width: 300px;
     height: 460px;
     margin: 0 auto;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
 }
 .w-pro-content{
@@ -2447,9 +2452,66 @@ table {
 }
 .w-pro>a{
     display: block;
+    text-align: center;
     height: 36px;
     border: 1px solid #ccc;
     margin-top: 12px;
     border-radius: 4px;
 }
+.w-pro>a>img{
+    margin-top: 8px;
+}
+
+.navbar{
+    width: 50%;
+}
+.menu2{
+    background-color: transparent;
+}
+
+.menu2::before{
+    background-color: #333;
+}
+.menu2::after{
+    background-color: #333;
+}
+.w-main-bottom{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
+    text-align: center;
+}
+.w-bottom-up{
+    display: inline-block;
+  
+    -webkit-animation: w_up 1.4s ease infinite;
+    animation: w_up 1.4s ease infinite;
+    
+}
+    @keyframes w_up{
+        0%{
+            margin-bottom: 0;
+            opacity: 1;
+        }
+     
+        100%{
+            margin-bottom: 10px;
+            opacity: 0;
+        }
+    }
+    @-webkit-keyframes w_up{
+        0%{
+            margin-bottom: 0;
+            opacity: 1;
+        }
+
+        100%{
+            margin-bottom: 10px;
+            opacity: 0;
+        }
+    }
+    .w-bottom-info{
+        color: #ccc;
+    }
 }

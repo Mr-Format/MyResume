@@ -90,9 +90,11 @@
 
 
             <div class="main" :style="'top: '+ top" id="main" @wheel.passive="wheelHandle($event)">
-                <!--  <div class="w-main-header">
-                    <span>Dylan's resume</span>
-                </div> -->
+                 <div class="w-main-bottom">
+                    <!-- <span>Dylan's resume</span> -->
+                    <span class="w-bottom-up" v-show="pageI !== 4"><img src="./lib/img/up.png" alt=""></span>
+                    <span class="w-bottom-info" v-show="pageI === 4">© 2019 Dylan</span>
+                </div>
                 <div class="main-header ">
                     <span class="main-header-author">Dylan</span>
                     <div class="main-header-resume">
@@ -298,7 +300,7 @@
                                     <div class="w-pro-info">
                                         <span>{{item.desc}}</span>
                                     </div>
-                                    <a :href="item.url"></a>
+                                    <a :href="item.url"><img src="./lib/img/Link.png" alt=""></a>
                                 </div>
                             </div>
                             <div class="w-pro-nav">
@@ -678,7 +680,7 @@
                                 this.proMoveFlag = false
                                 this.proIndex++
                             }
-                        }, 16);
+                        }, 12);
                     },
 
                     checkClient(){
@@ -946,21 +948,23 @@
                         let current = parseInt(this.top)
                         let instance = target - current
                         let step = Math.floor(instance / 20)
-                        if (step > 0) {
-                            this.pageI -= n
+                        /* if (step > 0) {
+                            
                         } else {
-                            this.pageI += n
-                        }
+                            
+                        } */
                         this.slideTimer = setInterval(() => {
                             this.top = parseInt(this.top) + step + "%"
                             if (step >= 0 && parseInt(this.top) >= target) {
                                 this.top = target + "%"
+                                this.pageI -= n
                                 setTimeout(() => {
                                     this.flag = false
                                 }, 300);
                                 clearInterval(this.slideTimer)
                             } else if (step <= 0 && parseInt(this.top) <= target) {
                                 this.top = target + "%"
+                                this.pageI += n
                                 setTimeout(() => {
                                     this.flag = false
                                 }, 300);
