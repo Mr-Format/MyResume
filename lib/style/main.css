@@ -135,6 +135,7 @@ table {
     width: 50%;
     height: 100%;
     left: 0;
+    /* background-color: #EB7347; */
     background-color: #eee;
     z-index: 9;
     /* transform: translateX(-50%) */
@@ -145,6 +146,7 @@ table {
     width: 50%;
     height: 100%;
     z-index: 9;
+    /* background-color:  #EB7347; */
     background-color: #eee;
 }
 
@@ -193,7 +195,7 @@ table {
     display: block;
     width: 40px;
     height: 40px;
-    background-color: #333;
+    background-color: #409EFF;
     border-radius: 100%;
     -webkit-animation: loading 0.4s ease 0s infinite alternate;
     animation: loading 0.4s ease 0s infinite alternate;
@@ -204,7 +206,7 @@ table {
     display: block;
     width: 40px;
     height: 40px;
-    background-color: #333;
+    background-color: #409EFF;
     border-radius: 100%;
     -webkit-animation: loading 0.4s ease 0.2s infinite alternate;
     animation: loading 0.4s ease 0.2s infinite alternate;
@@ -214,7 +216,7 @@ table {
     display: block;
     width: 40px;
     height: 40px;
-    background-color: #333;
+    background-color: #409EFF;
     border-radius: 100%;
     -webkit-animation: loading 0.4s ease 0.4s infinite alternate;
     animation: loading 0.4s ease 0.4s infinite alternate;
@@ -1778,7 +1780,6 @@ table {
     box-shadow: 0 0 2px rgba(204, 204, 204, 0.226);
     background-color: rgba(0, 0, 0, 0.4);
     transition: 0.3s ease;
-    
 }
 
 .container .main-5-content .c-link .c-link-l:hover{
@@ -2128,6 +2129,10 @@ table {
     }
     .w-main-bottom{
         display: none;
+    }
+    .back-to-top:hover{
+        opacity: 0.8;
+        transition: 0.5s;
     }
     
 }
@@ -2594,13 +2599,16 @@ table {
     z-index: 9;
     height: 40px;
     opacity: 0.5;
+    cursor: pointer;
     background-color: #333;
+    transition: 0.5s;
 }
 
 .back-to-top .back-to-top-ico{
     display: inline-block;
     width: 24px;
     height: 24px;
+
     background: url(../img/sprite.png) no-repeat -39px -156px;
 }
 
