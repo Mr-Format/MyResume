@@ -37,11 +37,16 @@
 
         <div class="container" id="container" @touchmove.prevent="touch2" @touchstart="touch1" @touchend="touchHandle">
             <div class="header">
-                <span @click="slide(0,0,0)" class="aside-btn" :class="pageI===0 ? pageFlag+'0'+' btnactive' : ''" title="首页"></span>
-                <span @click="slide(0,0,1)" class="aside-btn" :class="pageI===1 ? pageFlag+'1'+' btnactive' : ''" title="关于"></span>
-                <span @click="slide(0,0,2)" class="aside-btn" :class="pageI===2 ? pageFlag+'2'+' btnactive' : ''" title="技能"></span>
-                <span @click="slide(0,0,3)" class="aside-btn" :class="pageI===3 ? pageFlag+'3'+' btnactive' : ''" title="作品"></span>
-                <span @click="slide(0,0,4)" class="aside-btn" :class="pageI===4 ? pageFlag+'4'+' btnactive' : ''" title="联系"></span>
+                <span @click="slide(0,0,0)" class="aside-btn" :class="pageI===0 ? pageFlag+'0'+' btnactive' : ''"
+                    title="首页"></span>
+                <span @click="slide(0,0,1)" class="aside-btn" :class="pageI===1 ? pageFlag+'1'+' btnactive' : ''"
+                    title="关于"></span>
+                <span @click="slide(0,0,2)" class="aside-btn" :class="pageI===2 ? pageFlag+'2'+' btnactive' : ''"
+                    title="技能"></span>
+                <span @click="slide(0,0,3)" class="aside-btn" :class="pageI===3 ? pageFlag+'3'+' btnactive' : ''"
+                    title="作品"></span>
+                <span @click="slide(0,0,4)" class="aside-btn" :class="pageI===4 ? pageFlag+'4'+' btnactive' : ''"
+                    title="联系"></span>
             </div>
 
             <div @click="toggleMenu" :class="isMenu ? menu2 : menu1" class="menu" @mouseover="menuTitle=true"
@@ -93,9 +98,9 @@
 
 
             <div class="main" :style="'top: '+ top" id="main" @wheel.passive="wheelHandle($event)">
-                 <div class="w-main-bottom">
+                <div class="w-main-bottom">
                     <!-- <span>Dylan's resume</span> -->
-                    <span class="w-bottom-up" v-show="pageI !== 4"  @click="slide(0,0,0)"></span>
+                    <span class="w-bottom-up" v-show="pageI !== 4" @click="slide(0,0,0)"></span>
                     <span class="w-bottom-info" v-show="pageI === 4">© 2019 Dylan</span>
                 </div>
                 <transition name="backtotop">
@@ -273,15 +278,12 @@
                                     </span>
                                     <div class="skill-wrapper left-progress">
                                         <div class="skill-circle left-circle"
-                                            :class="isMobile || pageI===2 ? 'skill-'+ item.name : ''"
-                                  
-                                            >
+                                            :class="isMobile || pageI===2 ? 'skill-'+ item.name : ''">
                                         </div>
                                     </div>
                                     <div class="skill-wrapper right-progress">
                                         <div class="skill-circle right-circle"
-                                            :class="isMobile || pageI===2 ? 'skill-'+ item.name : ''"
-                                            >
+                                            :class="isMobile || pageI===2 ? 'skill-'+ item.name : ''">
                                         </div>
                                     </div>
                                 </div>
@@ -300,7 +302,9 @@
                     </div>
                     <div class="w-pro-container ">
                         <div class="w-pro-wrapper">
-                            <div class="w-pro-content" ref="pro" @touchstart="promove1" @touchmove="promove2" @touchend="promove3" :style="'left:' + proleft +'px;'+ 'width:' + proObj.length * 300 + 'px'">
+                            <div class="w-pro-content" ref="pro" @touchstart="promove1" @touchmove="promove2"
+                                @touchend="promove3"
+                                :style="'left:' + proleft +'px;'+ 'width:' + proObj.length * 300 + 'px'">
                                 <div class="w-pro-1 w-pro" v-for="item in proObj" :key="item.id">
                                     <div class="w-pro-prev">
                                         <img :src="item.src" alt="">
@@ -318,7 +322,7 @@
                                 <span class="w-pro-bar" :class="proIndex ===3 ? proactive : ''"></span>
                                 <span class="w-pro-bar" :class="proIndex ===4 ? proactive : ''"></span>
                             </div>
-                    
+
                         </div>
                     </div>
 
@@ -409,42 +413,42 @@
                     p_y_s: "",
                     p_x_e: "",
                     p_y_e: "",
-                    proTimer:"",
+                    proTimer: "",
 
                     proObj: [
                         {
                             "id": 0,
                             "name": "个人简历（本站）",
                             "desc": "使用Vue.js开发的个人简历网站，使用了HTML5、CSS3、Javascript技术，响应式布局结构，能够兼容PC端、移动端浏览器以及微信浏览器。主体结构部分使用了wheel事件（PC端）和touch事件（移动端）。",
-                            "src" : "./lib/images/w简历.jpg",
+                            "src": "./lib/images/w简历.jpg",
                             "url": "https://mr-format.github.io/MyResume"
                         },
                         {
                             "id": 1,
                             "name": "扫雷",
                             "desc": "使用前端技术开发的网页版扫雷游戏，基本实现了PC版游戏的全部功能，支持鼠标左右键同时点击事件，支持可选游戏难度，支持自定义游戏功能。",
-                            "src" : "./lib/images/w扫雷.jpg",
+                            "src": "./lib/images/w扫雷.jpg",
                             "url": "https://mr-format.github.io/static/minesweeper/index.html"
                         },
                         {
                             "id": 2,
                             "name": "用户管理系统",
                             "desc": "这是一个用户数据管理系统，前端开发环境为vue-cli，后端通过npm提供的json-server模块模拟API数据接口，并使用vue-resrouce实现对后台数据的增、删、改、查。",
-                            "src" : "./lib/images/w用户管理.jpg",
+                            "src": "./lib/images/w用户管理.jpg",
                             "url": "https://github.com/Mr-Format/manage"
                         },
                         {
                             "id": 3,
                             "name": "个人博客",
                             "desc": "使用Vue全家桶以及Element-UI开发的个人博客项目，主体为单页面结构，通过前端路由实现不同内容之间的切换，实现了响应式布局、分页功能、锚链接平滑跳转功能、搜索功能。",
-                            "src" : "./lib/images/w博客.jpg",
+                            "src": "./lib/images/w博客.jpg",
                             "url": "https://mr-format.github.io"
                         },
                         {
                             "id": 4,
                             "name": "手机商城",
                             "desc": "一个移动端购物网站，目前实现了新闻资讯、图片分享、商品列表以及购物车功能。选择的商品数量通过localStorage进行缓存，并可在底部购物车图标处查看，同时可在购物车页面修改选择的商品类型及数量。",
-                            "src" : "./lib/images/w手机商城.jpg",
+                            "src": "./lib/images/w手机商城.jpg",
                             "url": "https://mr-format.github.io/static/mobilepro/index.html"
                         },
                     ],
@@ -526,13 +530,6 @@
                     { "top": 24, "left": 400, "width": 400, "height": 240, "zIndex": 3, "opacity": 70 },
                     { "top": 48, "left": 600, "width": 320, "height": 192, "zIndex": 2, "opacity": 40 },
                     { "top": 48, "left": 600, "width": 320, "height": 192, "zIndex": 1, "opacity": 0 }],
-                    /* rotationSize: [{ "top": 60, "left": 0, "width": 400, "height": 240, "zIndex": 1, "opacity": 0 },
-                    { "top": 60, "left": 0, "width": 400, "height": 240, "zIndex": 2, "opacity": 40 },
-                    { "top": 30, "left": 150, "width": 500, "height": 300, "zIndex": 3, "opacity": 70 },
-                    { "top": 0, "left": 300, "width": 600, "height": 360, "zIndex": 4, "opacity": 100 },
-                    { "top": 30, "left": 550, "width": 500, "height": 300, "zIndex": 3, "opacity": 70 },
-                    { "top": 60, "left": 800, "width": 400, "height": 240, "zIndex": 2, "opacity": 40 },
-                    { "top": 60, "left": 800, "width": 400, "height": 240, "zIndex": 1, "opacity": 0 }], */
                     skill: [
                         {
                             name: "HTML5",
@@ -620,17 +617,17 @@
                             "transform": "translate(" + this.point.x + "," + this.point.y + ")" + " scale(" + this.point.s + "," + this.point.s + ")" + " rotateX(" + this.point.rx + "deg" + ")  rotateY(" + this.point.ry + "deg)",
                         }
                     },
-
                 },
                 mounted() {
+                    this.initClient()
                     this.checkClient()
-
-
                     /* 以下为PC端数据 */
                     // this.addWheel()
-                    this.rotationLi()
-                    this.rotationMove()
-                    this.initRotation()
+                    if (!this.isMobile) {
+                        this.rotationLi()
+                        this.rotationMove()
+                        this.initRotation()
+                    }
                     setTimeout(() => {
                         this.init = true
                     }, 1000)
@@ -639,52 +636,52 @@
                     }
                 },
                 updated() {
-                    // this.getDeg()
+
                 },
                 created() {
 
                 },
                 methods: {
-                    promove1(e){
+                    promove1(e) {
                         let p = e.touches[0]
                         this.p_x_s = p.pageX
                         this.p_y_s = p.pageY
                     },
-                    promove2(e){
+                    promove2(e) {
                         let p = e.touches[0]
                         this.p_x_e = p.pageX
                         this.p_y_e = p.pageY
                     },
-                    promove3(e){
-                        if(this.proMoveFlag){return}
+                    promove3(e) {
+                        if (this.proMoveFlag) { return }
                         let len = this.proObj.length
                         let p_x = this.p_x_e - this.p_x_s
                         let p_y = this.p_y_e - this.p_y_s
                         let pos = parseInt(this.$refs.pro.style.left)
-                        if(Math.abs(p_x) > Math.abs(p_y) && p_x > 50 && this.p_y_e){
-                            if(this.proleft >= 0){return}
+                        if (Math.abs(p_x) > Math.abs(p_y) && p_x > 50 && this.p_y_e) {
+                            if (this.proleft >= 0) { return }
                             this.proAnimat(1, 300)
-                        } else if (Math.abs(p_x) > Math.abs(p_y) && p_x < -50 && this.p_y_e){
-                            if(this.proleft <= -300*(len-1)){return}
+                        } else if (Math.abs(p_x) > Math.abs(p_y) && p_x < -50 && this.p_y_e) {
+                            if (this.proleft <= -300 * (len - 1)) { return }
                             this.proAnimat(-1, 300)
                         }
                         this.p_x_s = this.p_y_s = this.p_x_s = this.p_y_s = ""
                     },
-                    proAnimat(n,len){
+                    proAnimat(n, len) {
                         /* n方向 ， len距离 */
                         this.proMoveFlag = true
                         let cur = this.proleft
                         let tar = this.proleft + n * len
-                        let step = (tar-cur)/20
+                        let step = (tar - cur) / 20
                         this.proTimer = setInterval(() => {
                             this.proleft += step
-                            if(n>0 && this.proleft >= tar){
+                            if (n > 0 && this.proleft >= tar) {
                                 this.proleft = tar
                                 clearInterval(this.proTimer)
-                                this.proMoveFlag =false
+                                this.proMoveFlag = false
                                 this.proIndex--
                             }
-                            if(n<0 && this.proleft <= tar){
+                            if (n < 0 && this.proleft <= tar) {
                                 this.proleft = tar
                                 clearInterval(this.proTimer)
                                 this.proMoveFlag = false
@@ -692,12 +689,17 @@
                             }
                         }, 12);
                     },
-
-                    checkClient(){
-                        if(document.documentElement.clientWidth < 777 || document.body.clientWidth < 777){
+                    initClient() {
+                        if (document.documentElement.clientWidth < 777 || document.body.clientWidth < 777) {
                             this.isMobile = true
-                        } else{
+                        } else {
                             this.isMobile = false
+                        }
+                    },
+                    checkClient() {
+                        window.onresize = () => {
+                            this.initClient()
+                            this.initRotation()
                         }
                     },
 
@@ -713,6 +715,10 @@
                     initRotation() {
                         clearInterval(this.rotationTimer)
                         this.rotationTimer = setInterval(() => {
+                            if (this.isMobile) {
+                                clearInterval(this.rotationTimer)
+                                return
+                            }
                             this.rotationMove(true)
                         }, this.rotationSpeed)
                     },
@@ -804,7 +810,7 @@
                         }
                     },
                     showSkillDesc(event) {
-                        if(this.isMobile){
+                        if (this.isMobile) {
                             return
                         }
                         let index = ""
@@ -820,7 +826,7 @@
                     },
                     skillPro(event) {
                         // console.log(event)
-                        if(this.isMobile){return}
+                        if (this.isMobile) { return }
                         let index = event.target.getAttribute("name")
                         if (event.type === "mouseover") {
                             event.target.innerText = this.skill[index].progress + "%"
@@ -922,7 +928,7 @@
                             // 小于0，向下滚
                             this.slide(-1)
                         }
-                       
+
 
                     },
                     slide(m, n = 1, p) {
